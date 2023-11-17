@@ -5,12 +5,12 @@ README
 
 The purpose of this project was to explore efficient bitwise operations and memory allocation using common structures in RUST. This Rust program demonstrates a recursive encoding algorithm for generating error-correcting Speilman codes. It uses random sparse matrices and bitwise operations for encoding.
 
-The implementation is based on the 1996 paper "Linear-Time Encodable and Decodable Error-Correcting Codes" by Daniel A. Spielman. We define the code for any dimension \(2^\ell\) with \(\ell \geq \ell_0\). The code has a rate of \(\frac{1}{4}\), meaning the encoding of a \(2^\ell\)-bit message is \(2^{\ell+2}\)-bits long. 
+The implementation is based on the 1996 paper "Linear-Time Encodable and Decodable Error-Correcting Codes" by Daniel A. Spielman. We define the code for any dimension $2^\ell$ with $\ell \geq \ell_0$. The code has a rate of $\frac{1}{4}$, meaning the encoding of a $2^\ell$-bit message is $2^{\ell+2}$-bits long. 
 
 https://www.cs.yale.edu/homes/spielman/Research/ITsuperc.pdf. 
 
 ## Encoding Procedure
-The encoding procedure is recursive. Let \(E_\ell(m)\) denote the encoding function for length \(2^\ell\) messages. The base case \(E_{\ell_0}(m)\) is the encoding function of a random linear code with dimension \(2^{\ell_0}\), rate \(\frac{1}{4}\), and random generator matrix \(G_0\). The recursive case uses random sparse binary matrices \(A_t \in \{0,1\}^{2^{t-1} \times 2^t}\) with \(2^{t-1}\) rows and \(2^t\) columns. The \(A_t\) matrices are sparse in that each column has exactly \(g\) non-zero entries. The positions of the non-zero entries chosen independently at random.
+The encoding procedure is recursive. Let $E_\ell(m)$ denote the encoding function for length $2^\ell$ messages. The base case $E_{\ell_0}(m)$ is the encoding function of a random linear code with dimension $2^{\ell_0}$, rate $\frac{1}{4}$, and random generator matrix $G_0$. The recursive case uses random sparse binary matrices $A_t \in \{0,1\}^{2^{t-1} \times 2^t}$ with $2^{t-1}$ rows and $2^t$ columns. The $A_t$ matrices are sparse in that each column has exactly $g$ non-zero entries. The positions of the non-zero entries chosen independently at random.
 
 The encoding algorithm $E_\ell(m)$ is as follows:
 

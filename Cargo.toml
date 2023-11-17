@@ -1,5 +1,5 @@
 [package]
-name = "code_challenge"
+name = "error_correcting_speilman"
 version = "0.1.0"
 edition = "2021"
 
